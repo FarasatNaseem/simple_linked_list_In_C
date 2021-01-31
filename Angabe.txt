@@ -1,0 +1,148 @@
+Angabe
+
+Implementieren Sie eine Applikation, die eine beliebige Anzahl an Zeichenketten über Command Line Argumente entgegennehmen
+und Operationen an diesen während der Laufzeit anwenden kann.
+Beispielaufruf der Applikation
+Applikation.exe "Das hier ist die erste Zeichenkette" "Das hier ist die zweite Zeichenkette"
+Ablauf der Applikation
+Nach dem Start der Applikation können direkt Operationen ausgeführt werden.
+Hierfür wird textuell ein Menü mit folgenden Optionen am Bildschirm dargestellt, wobei durch Eingabe des angegebenen Kürzels die
+entsprechende Operation direkt ausgeführt werden kann.
+Nachfolgend wird das Menü beispielhaft dargestellt:
+
+Menü
+----
+ A ... Display strings list
+ B ... Reverse strings list
+ C ... Rotate list left
+ D ... Rotate list right
+ E ... Uppercase all letters
+ F ... Lowercase all letters
+ G ... Uppercase specific letters
+ H ... Lowercase specific letters
+ I ... Uppercase first letter
+ J ... Lowercase first letter
+ K ... Replace list string
+ L ... Append list string
+ M ... Insert list string
+ N ... Delete list string
+ O ... Quit application
+
+Am Ende jeder Operation (mit Ausnahme von "Quit application") wird das Menü erneut dargestellt.
+Bei Fehleingaben wird stets eine passende Fehlermeldung an der Konsole dargestellt und nach einer Benutzereingabe zum Menü
+zurückgekehrt, d.h. die Applikation terminiert ausschließlich durch Aufruf der Operation "Quit application". Sofern nicht anders angegeben,
+werden die Operationen auf alle Zeichenketten angewandt.
+Jede Operation (mit Ausnahme von "Display strings") verändert damit den Zustand der Zeichenketten, die einzelnen Operationen
+generieren hierbei keine Ausgabe an der Konsole.
+Unterstützen Sie folgende Operationen
+
+1: Display strings list
+Gibt alle Zeichenketten zeilenweise an der Konsole aus und wartet anschließend auf eine Benutzereingabe.
+
+2: Reverse strings list
+
+Hierbei werden die aktuellen Inhalte der Zeichenketten umgedreht.
+Beispiel:
+
+["ABC", "DEF"] -> ["CBA", "FED"]
+
+3: Rotate list Left
+
+Hierbei werden die aktuellen Zeichenketten des lists um eine Position nach links verschoben.
+Das erste Element landet an letzter Stelle.
+Beispiel:
+
+["ABC", "DEF", "GHI"] -> ["DEF", "GHI", "ABC"]
+
+4: Rotate list Right
+
+Hierbei werden die aktuellen Zeichenketten des lists um eine Position nach rechts verschoben.
+Das letzte Element landet an erster Stelle.
+Beispiel:
+
+["ABC", "DEF", "GHI"] -> ["GHI", "ABC", "DEF"]
+
+5: Uppercase all letters
+
+Hierbei werden alle Buchstaben in den Zeichenketten in Großbuchstaben umgewandelt.
+Beispiel:
+
+["Hallo", "du", "da!"] -> ["HALLO", "DU", "DA!"]
+
+6: Lowercase all letters
+
+Hierbei werden alle Buchstaben in den Zeichenketten in Kleinbuchstaben umgewandelt.
+Beispiel:
+
+["Hallo", "DU", "da!"] -> ["hallo", "du", "da!"]
+
+7: Uppercase specific letters
+
+Hierbei wird der Benutzer nach einem Buchstaben gefragt, der anschließend in den Zeichenketten in den entsprechenden
+Großbuchstaben umgewandelt wird.
+
+Beispiel:
+Buchstabe: "i"
+["Ich", "bin", "ein", "Beispiel"] -> ["Ich", "bIn", "eIn", "BeIspIel"]
+
+8: Lowercase specific letters
+
+Hierbei wird der Benutzer nach einem Buchstaben gefragt, der anschließend in den Zeichenketten in den entsprechenden
+Kleinbuchstaben umgewandelt wird.
+
+Beispiel:
+Buchstabe: "i"
+["ICH", "BIN", "EIN", "BEISPIEL"] -> ["iCH", "BiN", "EiN", "BEiSPiEL"]
+
+9: Uppercase first letter
+
+Hierbei wird der erste Buchstabe jedes Wortes in jeder Zeichenkette in einen Großbuchstaben umgewandelt.
+Beispiel:
+
+["!hallo", "das", "hier", "ist", "SCHRÄG"] -> ["!hallo", "Das", "Hier", "Ist", "SCHRÄG"]
+
+10: Lowercase first letter
+
+Hierbei wird der erste Buchstabe jedes Wortes in jeder Zeichenkette in einen Kleinbuchstaben umgewandelt.
+Beispiel:
+
+["!Hallo", "Das", "hier", "ist", "SCHRÄG"] -> ["!Hallo", "das", "hier", "ist", "sCHRÄG"]
+
+11: Replace list string
+
+Hierbei wird der Benutzer nach einer Zeichenkette und einem Index gefragt, anschließend wird die bestehende Zeichenkette am
+eingegebenen Index durch die eingegebene Zeichenkette ersetzt.
+
+Beispiel:
+Index: 1
+Zeichenkette: "XYZ"
+["ABC", "def", "GhI"] -> ["ABC", "XYZ, "GhI"]
+
+12: Append list string
+
+Hierbei wird der Benutzer nach einer Zeichenkette gefragt und diese am Ende das list angefügt.
+
+Beispiel:
+Zeichenkette: "XYZ"
+["ABC", "DEF", "GHI"] -> ["ABC", "DEF", "GHI", "XYZ"]
+
+13: Insert list string
+
+Hierbei wird der Benutzer nach einer Zeichenkette und einem Index gefragt, anschließend wird die eingegebene Zeichenkette am
+eingegebenen Index eingefügt.
+Hinweise:
+Einfügen im Index-Bereich von 0 bis zur Länge des list ist immer möglich, d.h. auch bei leeren list kann an der Stelle 0 eingefügt werden bzw.
+bei einem list mit N Elementen kann am Index N hinten angehängt werden.
+Beispiel:
+
+Index: 1
+Zeichenkette: "XYZ"
+["ABC", "def", "GhI"] -> ["ABC", "XYZ, "def", "GhI"]
+
+14: Delete list string
+
+Hierbei wird der Benutzer nach einem Index gefragt und anschließend wird die Zeichenkette am eingegebenen Index aus dem list entfernt.
+
+Beispiel:
+Index: 1
+["ABC", "XYZ, "def", "GhI"] -> ["ABC", "def", "GhI"]
